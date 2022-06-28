@@ -1,37 +1,29 @@
 <?php
-$variavel= 'teste';
-$variavel2= 'Tarumã';
+$variavel = 'teste';
+$variavel2 = 'taruma';
 
-if ($variavel2 == 'Tarumã'){
-    echo "é Tarumã!";
-}
-else if ($variavel2 == 'Assis'){
+if($variavel2 == 'taruma'){
+    echo "é tarumã!";
+}else if($variavel2 == 'assis'){
     echo "é Assis";
+}else{
+    echo "não é tarumã";
 }
-else {
-    echo "não é Taruma";
-}
-
 echo "<center>";
     echo $variavel;
     echo "<br>";
     echo $variavel2;
-     
-    $test= True;
-    $test2= False;
+
+    $test = True;
+    $test2 = False;
     echo $test;
 
 echo "</center>";
-
-//$variavel =743;
-//$variavel2= 197;
+$variavel = 194743;
+//$variavel2 = 197;
 //$soma = $variavel + $variavel2;
-//echo "<br>";
-//echo $soma;
+//echo "<br>O valor da soma é: $soma<br>";
 
-$nome= "Erica Negrini";
-$idade= "22 anos";
-echo "<br> Meu Nome é: $nome tenho $idade <br> ";
 
 
 

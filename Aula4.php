@@ -1,38 +1,50 @@
 <html>
-
     <head>
-<title> "formulario do aluno" </title>
-</head>
- 
-<body bgcolor= "orange">
-    <form action="" method="POST">
+        <title>Nosso primeiro Sistema</title>
+    </head>
+    <body bgcolor="gray">
+        <form action="" method="POST">
 
-     </form>
+            <label style="color:white;">Nome</label><br>
+            <input type="text" name="nome"> <br>
 
 
-</body>
-<hmtl>
-    <center>
+            <label style="color:white;">Sobrenome</label><br>
+            <input type="text" name="sobrenome"> <br>
 
-<label>
-    <b> Nome do aluno: </b>
-    </label>
-    <input type="text" name= "nome"> <br>
-    <br>
-    
-    <label>
-        <b>Sobrenome do aluno:</b>
-     </label>
-     <input type="text" name="sobrenome"> <br>
-     <br>
+            
+            <button type="submit">Salvar</button>
+        </form>
+        <?php
 
-    <label>
-        <b>Data de nascimento: </b>
-    </label>
-    <input type= "date" name="nascimeto"> <br>
-    <br>
+            $variavel = "mateus alves";
+            echo $variavel;
+            print_r($_POST);
+            echo 'oi';
+            if(isset($_POST['nome'])){
+                if($_POST['nome'] == "mateus"){
+                    echo "olá mateus";
+                }else if($_POST['nome'] == "cristina"){
+                    echo "olá cristina";
+                }else if($_POST['nome'] == "danila"){
+                    echo "olá danila";
+                }else if($_POST['nome'] == 'vinicius'){
+                    echo "olá vinicius";
+                }else if($_POST['nome'] == 'mateus alves'){
+                    echo "olá mateus alves";
+                }else if($_POST["nome"] == 'erica'){
+                    echo "olá erica";
+                }else if($_POST["nome"] == 'natalia'){
+                    echo "olá natalia";
+                }else if($_POST["nome"] == 'renato'){
+                    echo "olá renato";
+                }
 
-    <button type= "submit">SALVAR</button>
-</center>
-
-</hmtl>
+                if($_POST['nome'] == "mateus" || $_POST['nome'] == "cristina" || $_POST['nome'] == "danila"){
+                    echo "estamos estudando no polo";
+                }
+            }
+            
+        ?>
+    </body>
+</html>
