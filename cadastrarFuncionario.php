@@ -34,19 +34,34 @@
         <button type="button" class="btn btn-success"> Salvar </button>
     </form>
     <?php
-    $nomeservidor = "localhost";
-    $database="database";
-    $usuario="root";
-    $senha="";
+    
+        function conexao(){
+        $nomeservidor = "localhost";
+        $database="database";
+        $usuario="root";
+        $senha="";
         //criar a conexão
         $conexao = mysqli_connect($nomeservidor, $usuario, $senha, $database);
         //checagem de conexão
-        if(!$conexao){
-          die("Conexão Falhou: ".mysqli_connect_error());
+          if(!$conexao){
+            die("Conexão Falhou: ".mysqli_connect_error());
         }else{
           echo "Conexão com Sucesso!";
         }
+          return $conexao;
+      }
 
+      function selectFuncionarios(){
+        $conexao = conexao();
+        //executar o comando desejado
+        $comando = "SELECT * FROM FUNCIONARIOS";
+        $resultado_comando = mysqli_query($conexao, $comando) or die("Erro no envio so comando: ".$comando." ".mysqli_error($conexao));
+        //exibir os dados da nossa tabela
+        while($indice = mysqli_fetch_array($resultado_comando)){
+        print_r($indice);
+      }
+    }
+    selectFuncionarios();
     ?>
     </body>
 </html>

@@ -21,6 +21,36 @@
         <a href="cadastrarFuncionario.php" type="button" class="btn btn-success">
             Cadastrar Novo Funcionário
         </a>
+
+        <?php
+
+        function conexao(){
+        $nomeservidor = "localhost";
+        $database="database";
+        $usuario="root";
+        $senha="";
+        //criar a conexão
+        $conexao = mysqli_connect($nomeservidor, $usuario, $senha, $database);
+        //checagem de conexão
+          if(!$conexao){
+            die("Conexão Falhou: ".mysqli_connect_error());
+        }else{
+          echo "Conexão com Sucesso!";
+        }
+          return $conexao;
+      }
+
+      function selectFuncionarios(){
+        $conexao = conexao();
+        //executar o comando desejado
+        $comando = "SELECT * FROM FUNCIONARIOS";
+        $resultado_comando = mysqli_query($conexao, $comando) or die("Erro no envio so comando: ".$comando." ".mysqli_error($conexao));
+        //exibir os dados da nossa tabela
+        return $resultado_comando;
+    }
+    $funcionarios = selectFuncionarios();
+
+    ?>
         <table class="table table-dark table-hover">
             <thead>
                 <tr>
@@ -33,6 +63,20 @@
                 </tr>
             </thead>
             <tbody>
+                <?php
+
+                    while($indice = mysqli_fetch_array($funcionarios)){
+                        echo"<tr>";
+                        echo"<td>".$indice['id']."</td>";
+                        echo"<td>".$indice['nome']."</td>";
+                        echo"<td>".$indice['cargo']."</td>";
+                        echo"<td>".$indice['salario']."</td>";
+                        echo"<td>".$indice['Descrição']."</td>";
+                        echo "</tr>";
+
+                    print_r($indice);
+                    }
+                ?>
                 <tr>
                     <td>...</td>
                     <td>...</td>
