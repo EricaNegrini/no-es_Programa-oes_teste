@@ -35,7 +35,7 @@
           if(!$conexao){
             die("Conexão Falhou: ".mysqli_connect_error());
         }else{
-          echo "Conexão com Sucesso!";
+         // echo "Conexão com Sucesso!";
         }
           return $conexao;
       }
@@ -72,19 +72,14 @@
                         echo"<td>".$indice['cargo']."</td>";
                         echo"<td>".$indice['salario']."</td>";
                         echo"<td>".$indice['Descrição']."</td>";
+                        echo"<td>"."<button class='btn btn-info'>Editar</button>";
+                        echo"<button class='btn btn-danger'>Remover</button</td>";
                         echo "</tr>";
 
-                    print_r($indice);
+                    //print_r($indice);
                     }
                 ?>
-                <tr>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                    <td>...</td>
-                </tr>
+                
             </tbody>
         </table>
     </center>

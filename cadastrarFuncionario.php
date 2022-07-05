@@ -29,9 +29,9 @@
         <input class="form-control" type="number" name="salario" required> <br>
 
         <label>Descriçao:</label>
-        <input class="form-control" type="text" name="Descricao" required> <br>
+        <input class="form-control" type="text" name="descricao" required> <br>
 
-        <button type="button" class="btn btn-success"> Salvar </button>
+        <button type="submit" class="btn btn-success"> Salvar </button>
     </form>
     <?php
     
@@ -50,18 +50,19 @@
         }
           return $conexao;
       }
-
-      function selectFuncionarios(){
-        $conexao = conexao();
-        //executar o comando desejado
-        $comando = "SELECT * FROM FUNCIONARIOS";
-        $resultado_comando = mysqli_query($conexao, $comando) or die("Erro no envio so comando: ".$comando." ".mysqli_error($conexao));
-        //exibir os dados da nossa tabela
-        while($indice = mysqli_fetch_array($resultado_comando)){
-        print_r($indice);
+        function inserir($nome, $cargo, $salario, $descricao){
+           $conexao = conexao();
+            $comando ="INSERT INTO funcionarios(nome, cargo, salario, descricao) VALUES ('$nome', '$cargo', $salario, '$descricao')";
+              if (mysqli_query($conexao, $comando)){
+            echo"registro do funcionario efetuado com sucesso!";
+          } else{
+            echo "Error: ".$comando."<br>".mysqli_error($conexao);
+          }
+        }
+      if(isset($_POST['nome'])){
+        print_r($_POST);
+        inserir($_POST['nome'],$_POST['cargo'],$_POST['salario'],$_POST['descricao']);
       }
-    }
-    selectFuncionarios();
     ?>
     </body>
 </html>
