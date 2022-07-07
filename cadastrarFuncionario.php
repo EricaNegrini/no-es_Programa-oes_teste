@@ -18,51 +18,56 @@
         </div>
     </nav>
     <form class="form-control" action="" method="POST">
+        <label>Nome</label>
+        <input class="form-control" type="text" name="nome" required><br>
 
-        <label>Nome:</label>
-        <input class="form-control" type="text" name="nome" required> <br>
+        <label>Cargo</label>
+        <input class="form-control" type="text" name="cargo" required><br>
 
-        <label>Cargo:</label>
-        <input class="form-control" type="text" name="cargo" required> <br>
+        <label>Salário</label>
+        <input class="form-control" type="number" name="salario" required><br>
 
-        <label>Salário:</label>
-        <input class="form-control" type="number" name="salario" required> <br>
+        <label>Descrição</label>
+        <input class="form-control" type="text" name="descricao" required><br>
 
-        <label>Descriçao:</label>
-        <input class="form-control" type="text" name="descricao" required> <br>
-
-        <button type="submit" class="btn btn-success"> Salvar </button>
+        <button type="submit" class="form-control btn btn-success">
+          Salvar
+        </button>
     </form>
     <?php
-    
-        function conexao(){
-        $nomeservidor = "localhost";
-        $database="database";
-        $usuario="root";
-        $senha="";
+      function conexao(){
+        $nomeServidor = "localhost";
+        $database = "database";
+        $usuario = "root";
+        $senha = "";
+
         //criar a conexão
-        $conexao = mysqli_connect($nomeservidor, $usuario, $senha, $database);
+        $conexao = mysqli_connect($nomeServidor, $usuario, $senha, $database);
         //checagem de conexão
-          if(!$conexao){
-            die("Conexão Falhou: ".mysqli_connect_error());
+        if(!$conexao){
+          die("Conexão Falhou: ".mysqli_connect_error());
         }else{
           echo "Conexão com Sucesso!";
         }
-          return $conexao;
+        return $conexao;
       }
-        function inserir($nome, $cargo, $salario, $descricao){
-           $conexao = conexao();
-            $comando ="INSERT INTO funcionarios(nome, cargo, salario, descricao) VALUES ('$nome', '$cargo', $salario, '$descricao')";
-              if (mysqli_query($conexao, $comando)){
-            echo"registro do funcionario efetuado com sucesso!";
-          } else{
-            echo "Error: ".$comando."<br>".mysqli_error($conexao);
-          }
-        }
+
+      function inserir($nome, $cargo, $salario, $descricao){
+         $conexao = conexao();
+         $comando = "INSERT INTO funcionarios(nome,cargo,salario,descricao) VALUES ('$nome', '$cargo', $salario, '$descricao')";
+         
+         if(mysqli_query($conexao, $comando)){
+          echo "Registro do Funcionário efetuado com sucesso!";
+         }else{
+          echo "Erro: ".$comando."<br>".mysqli_error($conexao);
+         }
+      }
+
       if(isset($_POST['nome'])){
         print_r($_POST);
-        inserir($_POST['nome'],$_POST['cargo'],$_POST['salario'],$_POST['descricao']);
+        inserir($_POST['nome'], $_POST['cargo'], $_POST['salario'], $_POST['descricao']);
       }
+      
     ?>
     </body>
 </html>

@@ -40,6 +40,7 @@
           return $conexao;
       }
 
+    
       function selectFuncionarios(){
         $conexao = conexao();
         //executar o comando desejado
@@ -47,7 +48,22 @@
         $resultado_comando = mysqli_query($conexao, $comando) or die("Erro no envio so comando: ".$comando." ".mysqli_error($conexao));
         //exibir os dados da nossa tabela
         return $resultado_comando;
-    }
+      }
+
+      function deletar($id){
+        $conexao = conexao();
+        $comando ="DELETE FROM FUNCIONARIOS WHERE ID= $id";
+        if(mysqli_query($conexao, $comando)){
+            echo "Registro do funcionario apagado com sucesso!";
+        }else{
+            echo "Deu erro, funcionario não foi apagado.";
+        }
+      }
+    
+    
+
+
+
     $funcionarios = selectFuncionarios();
 
     ?>
@@ -64,16 +80,25 @@
             </thead>
             <tbody>
                 <?php
-
+                    if(isset($_GET['id'])){
+                        deletar($_GET['id']);
+                    }
+                        
                     while($indice = mysqli_fetch_array($funcionarios)){
                         echo"<tr>";
                         echo"<td>".$indice['id']."</td>";
                         echo"<td>".$indice['nome']."</td>";
                         echo"<td>".$indice['cargo']."</td>";
                         echo"<td>".$indice['salario']."</td>";
-                        echo"<td>".$indice['Descrição']."</td>";
-                        echo"<td>"."<button class='btn btn-info'>Editar</button>";
-                        echo"<button class='btn btn-danger'>Remover</button</td>";
+                        echo"<td>".$indice['descricao']."</td>";
+                        echo"<td>";
+                            echo"<form action= 'editarFuncionarios.php?id=$indice[id] method = 'POST'>";
+                            echo"<button class='btn btn-info'>Editar</button>";
+                            echo "</form>";
+                            echo"<form action= 'funcionarios.php?id=$indice[id]' method = 'POST'>"; 
+                            echo"<button type='submit' class ='btn btn-danger' >Remover</button>";
+                            echo "</form>";
+                        echo "</td>";
                         echo "</tr>";
 
                     //print_r($indice);
