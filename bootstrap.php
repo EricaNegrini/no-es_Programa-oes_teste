@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- <script type='text/javascript' src='scripts/bootstrap.js'></script> -->
+    <link rel='stylesheet' type='text/css' href='css/bootstrap.css'>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
   </head>
   <body>
     <nav class="navbar bg-dark">
@@ -26,35 +28,34 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-            <img src="imagens/cidadedigital.png" class="d-block" width="100%" height="400px" alt="...">
+                <img src="imagens/carro.png" class="d-block" width="100%" height="400px" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 style="color:red;">Honda Civic 1</h5>
+                    <p>Venda de Honda Civic Branco por X.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+            <img src="imagens/carro.png" class="d-block" width="100%" height="400px" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Cidade Digital</h5>
-                <p>Hoje a tecnologia em tudo!</p>
+                <h5 style="color:red;">Honda Civic 2</h5>
+                <p>Venda de Honda Civic Branco por X.</p>
             </div>
             </div>
             <div class="carousel-item">
-            <img src="imagens/cidadedigital.png" class="d-block" width="100%" height="400px" alt="...">
+            <img src="imagens/carro.png" class="d-block" width="100%" height="400px" alt="...">
             <div class="carousel-caption d-none d-md-block">
-                <h5>Gera Oportunidades</h5>
-                <p>Gera mais empregos e cursos na área da Tecnologia.</p>
-            </div>
-            </div>
-            <div class="carousel-item">
-            <img src="imagens/cidadedigital.png" class="d-block" width="100%" height="400px" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Tudo á tecnologia</h5>
-                <p>Tudo que olhamos em volta é tecnologia, para pequenas a grandes empresas.</p>
+                <h5 style="color:red;" >Honda Civic 3</h5>
+                <p>Venda de Honda Civic Branco por X.</p>
             </div>
             </div>
 
             <div class="carousel-item">
-            <img src="imagens/cidadedigital.png" class="d-block" width="100%" height="400px" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Hoje o mundo está mudando!</h5>
-                <p>Tecnologia vem para mudar nossas vidas.</p>
+                <img src="imagens/carro.png" class="d-block" width="100%" height="400px" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 style="color:red;" >Honda Civic 4</h5>
+                    <p>Venda de Honda Civic Branco por X.</p>
+                </div>
             </div>
-            </div>
-
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -66,6 +67,6 @@
         </button>
     </div>
     <h1>Hello, world!</h1>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
   </body>
 </html>

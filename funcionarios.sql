@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Jul-2022 às 00:19
+-- Tempo de geração: 07-Jul-2022 às 00:18
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 7.4.29
 
@@ -40,9 +40,9 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id`, `nome`, `cargo`, `salario`, `descricao`) VALUES
-(1, 'Erica Rosa Negrini de Andrade', 'Desenvolvedora', 1000, 'Desenvolver Sistemas'),
-(2, 'Kauan', 'Desenvolvedor de sistemas', 3000, 'Desenvolver sistemas de computador'),
-(3, 'Rebeca', 'desenvolvedora', 3500, 'desenvolvedora de sistema');
+(1, 'Mateus Tormes', 'Desenvolvedor', 100, 'Desenvolver de Sistemas'),
+(2, 'Kauan', 'Desenvolvedor de Sistemas', 3000, 'Desenvolve sistemas de computador.'),
+(3, 'Vinicius', 'Desenvolvedor', 3500, 'desenvolvedor de sistemas');
 
 --
 -- Índices para tabelas despejadas
